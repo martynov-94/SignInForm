@@ -28,12 +28,26 @@
           <button class="form__show-pw-btn" type="button" onclick="togglePasswordVisibility()"></button>
         </div>
 
-        <button class="form__text-btn form__text-btn_reset" type="button">Reset password</button>
+        <button class="form__text-btn form__text-btn_reset" type="button" onclick="showResetForm()">Reset password</button>
         <button class="form__text-btn form__text-btn_create" type="button">Create an account</button>
         <input class="form__submit-btn" type="submit" value="Send" onclick="checkPassword()">
         <div class="form__remember-user-container">
           <input class="form__checkbox" type="checkbox" name="rememberUser" id="rememberUser" checked>
           <label class="form__checkbox-label" for="rememberUser">Remember me</label>
+        </div>
+      </form>
+
+      <form class="form reset-form visually-hidden" action="">
+        <legend class="reset-form__title form__title">Reset</legend>
+        
+        <div class="reset-form__email-input-container reset-form__email-input-container_empty">
+          <input class="form__text-input form__text-input_email reset-form__email-input" id="email" type="email" name="email" placeholder="E-mail *">
+        </div>
+
+        <input class="form__submit-btn reset-form__submit-btn reset-form__submit-btn_disabled" type="button" value="Send" disabled onclick="resetLoginAndPw()">
+
+        <div class="reset-form__reset-msg-container visually-hidden">
+          <span class="reset-msg-text">New login and password have been sent to e-mail</span>
         </div>
       </form>
 

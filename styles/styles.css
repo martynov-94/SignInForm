@@ -158,6 +158,7 @@ body {
   display: inline-block;
   bottom: -22px;
   left: 0;
+  font-family: "Montserrat", sans-serif;
   font-size: 0.75rem;
   line-height: 1.66;
   font-weight: 400;
@@ -272,6 +273,121 @@ body {
   padding: 13px 24.375vw 11px;
   background: #F2F2F2;
   box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.reset-form {
+  justify-content: flex-start;
+}
+@media screen and (min-width: 768px) {
+  .reset-form {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    gap: 0;
+  }
+}
+.reset-form__title {
+  margin-bottom: 36px;
+}
+@media screen and (min-width: 768px) {
+  .reset-form__title {
+    margin-bottom: 26px;
+  }
+}
+.reset-form__email-input-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 90px;
+}
+@media screen and (min-width: 768px) {
+  .reset-form__email-input-container {
+    grid-row: 1;
+    grid-column: 2/-1;
+    width: 360px;
+  }
+}
+.reset-form__email-input-container_empty::after {
+  content: "Enter your e-mail adress to recover your login information and reset your password";
+  position: absolute;
+  display: inline-block;
+  bottom: -48px;
+  left: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.66;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+}
+.reset-form__email-input-container_error::after {
+  content: "There is no user with this e-mail in our community";
+  position: absolute;
+  display: inline-block;
+  bottom: -48px;
+  left: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.66;
+  font-weight: 400;
+  color: #C73131;
+}
+@media screen and (min-width: 768px) {
+  .reset-form__email-input-container_error::after {
+    bottom: -28px;
+  }
+}
+.reset-form__email-input-container_error .reset-form__email-input {
+  border-color: #C73131;
+}
+.reset-form__submit-btn_disabled {
+  color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+@media screen and (min-width: 768px) {
+  .reset-form__submit-btn {
+    grid-row: 3;
+  }
+}
+.reset-form__reset-msg-container {
+  position: relative;
+  width: 220px;
+  margin-left: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #FFFFFF;
+  text-align: center;
+}
+.reset-form__reset-msg-container::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: -20px;
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  border: 3px solid #ffffff;
+  border-top: none;
+  border-right: none;
+  transform: rotate(-45deg);
+}
+@media screen and (min-width: 768px) {
+  .reset-form__reset-msg-container {
+    width: 324px;
+    margin-left: 50px;
+    text-align: left;
+  }
+  .reset-form__reset-msg-container::before {
+    left: -34px;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: white !important;
 }
 
 .visually-hidden {
