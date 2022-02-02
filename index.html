@@ -12,15 +12,25 @@
   </head>
   <body>
     <div class="wrapper">
-      <input class="close-btn" type="image" src="./img/close_btn.svg">
-      
+      <button class="close-btn-container" type="button">
+        <img class="close-btn" src="./img/close_btn.svg" width="24" height="24" alt="Close button">
+        <span class="close-btn-label">Close</span>
+      </button>
+
+      <img class="logo" src="./img/logo.png" width="384" height="80" alt="Logo">
+
       <form class="form sign-in-form" action="">
         <legend class="form__title">Sign in</legend>
-        <input class="form__text-input" type="email" name="email" >
-        <input class="form__text-input" type="password" name="password" >
-        <button class="form__text-btn">Reset password</button>
-        <button class="form__text-btn">Create an account</button>
-        <input class="form__submit-btn" type="submit" value="Send">
+
+        <input class="form__text-input form__text-input_email" type="email" name="email" placeholder="E-mail *">
+        <div class="form__pw-container">
+          <input class="form__text-input form__text-input_password" type="password" name="password" placeholder="Password *">
+          <button class="form__show-pw-btn" type="button" onclick="togglePasswordVisibility()"></button>
+        </div>
+
+        <button class="form__text-btn form__text-btn_reset" type="button">Reset password</button>
+        <button class="form__text-btn form__text-btn_create" type="button">Create an account</button>
+        <input class="form__submit-btn" type="submit" value="Send" onclick="checkPassword()">
         <div class="form__remember-user-container">
           <input class="form__checkbox" type="checkbox" name="rememberUser" id="rememberUser" checked>
           <label class="form__checkbox-label" for="rememberUser">Remember me</label>
